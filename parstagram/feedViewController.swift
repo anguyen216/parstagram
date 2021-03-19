@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import Parse
 
 class feedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        self.dismiss(animated: true, completion: nil)
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }
     
 

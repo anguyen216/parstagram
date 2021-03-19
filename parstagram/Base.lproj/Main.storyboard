@@ -91,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="20" y="89"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Home-->
         <scene sceneID="dt5-t3-0gW">
             <objects>
                 <viewController id="baM-w3-NQt" customClass="feedViewController" customModule="parstagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,7 +101,12 @@
                         <viewLayoutGuide key="safeArea" id="ppE-Gz-7vs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gWS-U9-0sk">
+                    <navigationItem key="navigationItem" title="Home" id="gWS-U9-0sk">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="0iU-t1-yIZ">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="baM-w3-NQt" id="ZE4-QR-VPu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" style="plain" id="nwe-9L-JBa">
                             <connections>
                                 <segue destination="2BD-ws-syn" kind="presentation" modalPresentationStyle="fullScreen" id="JRe-GF-doK"/>

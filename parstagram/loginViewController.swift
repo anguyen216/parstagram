@@ -16,8 +16,13 @@ class loginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+            self.performSegue(withIdentifier: "loginSegue", sender: self)
+        }
     }
     
     @IBAction func onSignUp(_ sender: Any) {
@@ -27,6 +32,7 @@ class loginViewController: UIViewController {
         user.signUpInBackground { (success, error) in
             if (success) {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                UserDefaults.standard.set(true, forKey: "userLoggedIn")
             } else {
                 let alertController = UIAlertController(title: "Cannot Sign Up", message: "Error \(error?.localizedDescription)", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -44,6 +50,7 @@ class loginViewController: UIViewController {
         let password = passwordField.text!
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if (user != nil) {
+                UserDefaults.standard.set(true, forKey: "userLoggedIn")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 let alertController = UIAlertController(title: "Cannot Login", message: "Error \(error?.localizedDescription)", preferredStyle: .alert)
