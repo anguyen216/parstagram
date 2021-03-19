@@ -20,6 +20,7 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // customize commentField
         commentField.layer.borderWidth = 1
         commentField.layer.borderColor = UIColor.lightGray.cgColor
+        commentField.layer.cornerRadius = 5
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -44,6 +45,30 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onSubmitButton(_ sender: Any) {
+        // get/create object table
+        // set values for each object
+        let post = PFObject(className: "Posts")
+        post["caption"] = commentField.text!
+        post["author"] = PFUser.current()!
+        
+        // get the image data
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        post["image"] = file
+        
+        // submit the post
+        post.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                let alertController = UIAlertController(title: "Cannot Submit Post", message: "Error \(error?.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true)
+                print("Error \(error?.localizedDescription)")
+            }
+        }
     }
     
 
