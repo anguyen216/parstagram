@@ -28,6 +28,11 @@ class loginViewController: UIViewController {
             if (success) {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
+                let alertController = UIAlertController(title: "Cannot Sign Up", message: "Error \(error?.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true)
+                
                 print("Error \(error?.localizedDescription)")
             }
         }
@@ -41,6 +46,10 @@ class loginViewController: UIViewController {
             if (user != nil) {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
+                let alertController = UIAlertController(title: "Cannot Login", message: "Error \(error?.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true)
                 print("Error \(error?.localizedDescription)")
             }
         }
