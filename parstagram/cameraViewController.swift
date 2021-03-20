@@ -23,6 +23,10 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         commentField.layer.cornerRadius = 5
     }
     
+    @IBAction func onSwipe(_ sender: Any) {
+        commentField.endEditing(true)
+    }
+    
     @IBAction func onCameraButton(_ sender: Any) {
         // upon tap, open camera or show photo album
         let picker = UIImagePickerController()
@@ -31,10 +35,30 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
         } else {
-            picker.sourceType = .photoLibrary
+            let alertController = UIAlertController(title: "Error", message: "Cannot open Camera App", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
         }
         present(picker, animated: true, completion: nil)
     }
+    
+    @IBAction func onLibraryButton(_ sender: Any) {
+        // upon tap show photo album
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            picker.sourceType = .photoLibrary
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "Cannot open Photo Library", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
+        }
+        present(picker, animated: true, completion: nil)
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
@@ -69,6 +93,10 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("Error \(error?.localizedDescription)")
             }
         }
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 
