@@ -13,6 +13,7 @@
 		5850CD942604317F00D2FFB8 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850CD932604317F00D2FFB8 /* loginViewController.swift */; };
 		5850CD992604319C00D2FFB8 /* feedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850CD982604319C00D2FFB8 /* feedViewController.swift */; };
 		5858FA6626055D9600F5AA16 /* postCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5858FA6526055D9600F5AA16 /* postCell.swift */; };
+		58720385260DA6970010AC66 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58720384260DA6970010AC66 /* CommentCell.swift */; };
 		58917B0826042CD6006227D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58917B0726042CD6006227D1 /* AppDelegate.swift */; };
 		58917B0A26042CD6006227D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58917B0926042CD6006227D1 /* SceneDelegate.swift */; };
 		58917B0F26042CD6006227D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58917B0D26042CD6006227D1 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		5850CD932604317F00D2FFB8 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		5850CD982604319C00D2FFB8 /* feedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedViewController.swift; sourceTree = "<group>"; };
 		5858FA6526055D9600F5AA16 /* postCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCell.swift; sourceTree = "<group>"; };
+		58720384260DA6970010AC66 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		58917B0426042CD6006227D1 /* parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58917B0726042CD6006227D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58917B0926042CD6006227D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				5850CD982604319C00D2FFB8 /* feedViewController.swift */,
 				58BDC20E2605421300AE62A3 /* cameraViewController.swift */,
 				5858FA6526055D9600F5AA16 /* postCell.swift */,
+				58720384260DA6970010AC66 /* CommentCell.swift */,
 			);
 			path = parstagram;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				58BDC20F2605421300AE62A3 /* cameraViewController.swift in Sources */,
 				5850CD992604319C00D2FFB8 /* feedViewController.swift in Sources */,
 				5850CD942604317F00D2FFB8 /* loginViewController.swift in Sources */,
+				58720385260DA6970010AC66 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

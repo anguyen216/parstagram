@@ -148,6 +148,41 @@
                                             <outlet property="usernameLabel" destination="xU7-41-ArV" id="kXP-iU-Wow"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="93" id="fJg-or-szb" customClass="CommentCell" customModule="parstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="410" width="414" height="93"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJg-or-szb" id="fvF-bP-y2x">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyf-jc-aCv">
+                                                    <rect key="frame" x="10" y="11" width="394" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glm-iE-iJZ">
+                                                    <rect key="frame" x="10" y="34" width="394" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="glm-iE-iJZ" firstAttribute="leading" secondItem="fvF-bP-y2x" secondAttribute="leading" constant="10" id="9KH-U9-CnR"/>
+                                                <constraint firstItem="glm-iE-iJZ" firstAttribute="top" secondItem="Dyf-jc-aCv" secondAttribute="bottom" constant="5" id="Tph-Qc-mAP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dyf-jc-aCv" secondAttribute="trailing" constant="10" id="YY8-oM-Rol"/>
+                                                <constraint firstItem="Dyf-jc-aCv" firstAttribute="top" secondItem="fvF-bP-y2x" secondAttribute="topMargin" id="ZOq-6h-SYo"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="glm-iE-iJZ" secondAttribute="bottom" constant="5" id="ZqW-Na-JBO"/>
+                                                <constraint firstAttribute="trailing" secondItem="glm-iE-iJZ" secondAttribute="trailing" constant="10" id="cVF-TF-Eor"/>
+                                                <constraint firstItem="Dyf-jc-aCv" firstAttribute="leading" secondItem="fvF-bP-y2x" secondAttribute="leading" constant="10" id="iEj-uS-Vqi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="glm-iE-iJZ" id="XFQ-tN-EVe"/>
+                                            <outlet property="nameLabel" destination="Dyf-jc-aCv" id="cn2-8h-JNy"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
